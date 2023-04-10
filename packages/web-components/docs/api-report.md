@@ -4,6 +4,7 @@
 
 ```ts
 
+import { ButtonOptions } from '@microsoft/fast-foundation';
 import { CSSDesignToken } from '@microsoft/fast-foundation';
 import { DividerOrientation } from '@microsoft/fast-foundation';
 import { DividerRole } from '@microsoft/fast-foundation';
@@ -11,6 +12,7 @@ import { ElementStyles } from '@microsoft/fast-element';
 import { ElementViewTemplate } from '@microsoft/fast-element';
 import { FASTAccordion } from '@microsoft/fast-foundation';
 import { FASTAccordionItem } from '@microsoft/fast-foundation';
+import { FASTButton } from '@microsoft/fast-foundation';
 import { FASTDivider } from '@microsoft/fast-foundation';
 import { FASTElement } from '@microsoft/fast-element';
 import { FASTElementDefinition } from '@microsoft/fast-element';
@@ -18,10 +20,14 @@ import { FASTProgress } from '@microsoft/fast-foundation';
 import { FASTProgressRing } from '@microsoft/fast-foundation';
 import { FASTSlider } from '@microsoft/fast-foundation';
 import { FASTSwitch } from '@microsoft/fast-foundation';
+import { FASTTab } from '@microsoft/fast-foundation';
+import { FASTTabPanel } from '@microsoft/fast-foundation';
+import { FASTTabs } from '@microsoft/fast-foundation';
 import { SliderOrientation } from '@microsoft/fast-foundation';
 import { StartEnd } from '@microsoft/fast-foundation';
 import { StartEndOptions } from '@microsoft/fast-foundation';
 import { StaticallyComposableHTML } from '@microsoft/fast-foundation';
+import { TabsOrientation } from '@microsoft/fast-foundation';
 import type { Theme } from '@fluentui/tokens';
 import { ValuesOf } from '@microsoft/fast-foundation';
 
@@ -331,6 +337,64 @@ export const borderRadiusSmall: CSSDesignToken<string>;
 
 // @public (undocumented)
 export const borderRadiusXLarge: CSSDesignToken<string>;
+
+// @public
+export class Button extends FASTButton {
+    appearance?: ButtonAppearance | undefined;
+    // (undocumented)
+    connectedCallback(): void;
+    disabledFocusable?: boolean;
+    // (undocumented)
+    protected disabledFocusableChanged(prev: boolean, next: boolean): void;
+    // (undocumented)
+    disconnectedCallback(): void;
+    iconOnly: boolean;
+    shape?: ButtonShape | undefined;
+    size?: ButtonSize;
+}
+
+// @public
+export const ButtonAppearance: {
+    readonly primary: "primary";
+    readonly outline: "outline";
+    readonly subtle: "subtle";
+    readonly secondary: "secondary";
+    readonly transparent: "transparent";
+};
+
+// @public
+export type ButtonAppearance = ValuesOf<typeof ButtonAppearance>;
+
+// @public
+export const ButtonDefinition: FASTElementDefinition<typeof Button>;
+
+export { ButtonOptions }
+
+// @public
+export const ButtonShape: {
+    readonly circular: "circular";
+    readonly rounded: "rounded";
+    readonly square: "square";
+};
+
+// @public
+export type ButtonShape = ValuesOf<typeof ButtonShape>;
+
+// @public
+export const ButtonSize: {
+    readonly small: "small";
+    readonly medium: "medium";
+    readonly large: "large";
+};
+
+// @public
+export type ButtonSize = ValuesOf<typeof ButtonSize>;
+
+// @public (undocumented)
+export const ButtonStyles: ElementStyles;
+
+// @public
+export const ButtonTemplate: ElementViewTemplate<Button>;
 
 // @public (undocumented)
 export const colorBackgroundOverlay: CSSDesignToken<string>;
@@ -1772,6 +1836,75 @@ export const switchStyles: ElementStyles;
 
 // @public (undocumented)
 export const switchTemplate: ElementViewTemplate<Switch>;
+
+// @public
+export class Tab extends FASTTab {
+    // (undocumented)
+    connectedCallback(): void;
+}
+
+// @public (undocumented)
+export const TabDefinition: FASTElementDefinition<typeof Tab>;
+
+// @public (undocumented)
+export class TabPanel extends FASTTabPanel {
+}
+
+// @public (undocumented)
+export const TabPanelDefinition: FASTElementDefinition<typeof TabPanel>;
+
+// @public (undocumented)
+export const TabPanelStyles: ElementStyles;
+
+// @public (undocumented)
+export const TabPanelTemplate: ElementViewTemplate<FASTTabPanel, any>;
+
+// @public
+export class Tabs extends FASTTabs {
+    // (undocumented)
+    activeidChanged(oldValue: string, newValue: string): void;
+    appearance?: TabsAppearance;
+    disabled?: boolean;
+    size?: TabsSize;
+    // (undocumented)
+    tabsChanged(): void;
+}
+
+// @public (undocumented)
+export const TabsAppearance: {
+    readonly subtle: "subtle";
+    readonly transparent: "transparent";
+};
+
+// @public (undocumented)
+export type TabsAppearance = ValuesOf<typeof TabsAppearance>;
+
+// @public (undocumented)
+export const TabsDefinition: FASTElementDefinition<typeof Tabs>;
+
+export { TabsOrientation }
+
+// @public (undocumented)
+export const TabsSize: {
+    readonly small: "small";
+    readonly medium: "medium";
+    readonly large: "large";
+};
+
+// @public (undocumented)
+export type TabsSize = ValuesOf<typeof TabsSize>;
+
+// @public (undocumented)
+export const TabsStyles: ElementStyles;
+
+// @public (undocumented)
+export const TabsTemplate: ElementViewTemplate<FASTTabs, any>;
+
+// @public (undocumented)
+export const TabStyles: ElementStyles;
+
+// @public (undocumented)
+export const TabTemplate: ElementViewTemplate<FASTTab, any>;
 
 // @public
 class Text_2 extends FASTElement {
